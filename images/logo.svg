@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 640" fill="none">
+
+  <!-- Black circle symbol background -->
+  <circle cx="250" cy="195" r="180" fill="#111111"/>
+
+  <!-- Spiral Arc 1 — outermost arm, large sweep -->
+  <path
+    d="M 130 340
+       C  75 295,  52 230,  62 172
+       C  74 108, 120  65, 185  55
+       C 255  44, 318  82, 343 148
+       C 368 215, 345 285, 298 322
+       C 258 354, 208 352, 180 328"
+    stroke="white" stroke-width="9" stroke-linecap="round" fill="none"/>
+
+  <!-- Spiral Arc 2 — middle arm -->
+  <path
+    d="M 178 328
+       C 148 304, 136 268, 143 236
+       C 152 198, 178 172, 213 165
+       C 252 158, 286 178, 295 213
+       C 305 250, 284 286, 254 296
+       C 228 305, 202 292, 192 270"
+    stroke="white" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- Spiral Arc 3 — inner arm -->
+  <path
+    d="M 191 270
+       C 182 252, 182 230, 192 215
+       C 203 198, 222 190, 243 193
+       C 265 197, 278 215, 274 237
+       C 270 257, 255 268, 238 265"
+    stroke="white" stroke-width="7" stroke-linecap="round" fill="none"/>
+
+  <!-- Center dot -->
+  <circle cx="234" cy="255" r="16" fill="white"/>
+
+  <!-- "Opus" wordmark -->
+  <text
+    x="250" y="475"
+    text-anchor="middle"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="138" font-weight="700" fill="#111111" letter-spacing="-3"
+  >Opus</text>
+
+  <!-- "FAMÍLIA &amp; LEGADO" descriptor -->
+  <text
+    x="250" y="540"
+    text-anchor="middle"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="30" font-weight="400" fill="#111111" letter-spacing="7"
+  >FAMÍLIA &amp; LEGADO</text>
+
+</svg>

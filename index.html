@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opus Família & Legado — Wealth Planning B2B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #2C3E50;
+    --navy-deep: #1a2634;
+    --navy-mid: #243447;
+    --gold: #D4A574;
+    --gold-light: #e8c49a;
+    --gold-pale: rgba(212,165,116,0.12);
+    --ash: #ECF0F1;
+    --ash-mid: #d5dde0;
+    --white: #FFFFFF;
+    --blue-accent: #3498DB;
+    --text-body: #4a5568;
+    --text-muted: #718096;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+    --radius: 4px;
+    --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--navy);
+    background: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── UTILITIES ─────────────────── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+  @media (max-width: 768px) { .container { padding: 0 24px; } }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── NAV ─────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0;
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(26,38,52,0.97);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(212,165,116,0.15);
+  }
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  @media (max-width: 768px) { .nav-inner { padding: 0 24px; } }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .nav-logo-text {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.1;
+  }
+  .nav-logo-sub {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-top: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+  @media (max-width: 900px) { .nav-links { display: none; } }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy) !important;
+    background: var(--gold);
+    padding: 10px 24px;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, opacity 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; opacity: 1 !important; }
+
+  /* ── HERO ─────────────────────────── */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(52,152,219,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 15% 80%, rgba(212,165,116,0.07) 0%, transparent 50%),
+      linear-gradient(135deg, #1a2634 0%, #243447 60%, #1e3048 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  }
+
+  .hero-diagonal {
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(212,165,116,0.04) 50%, transparent 100%);
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; padding: 120px 24px 80px; gap: 48px; }
+    .hero-visual { display: none; }
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+  .hero-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    display: block;
+  }
+
+  .hero-h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 500;
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    max-width: 480px;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 15px 32px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background var(--transition), transform var(--transition);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-primary svg { transition: transform 0.3s ease; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    padding: 15px 24px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 2px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.1s forwards;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {}
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.6s forwards;
+  }
+  .hero-card-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .hero-card-title {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 24px;
+    line-height: 1.35;
+    font-weight: 400;
+  }
+
+  .hero-card-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-card-item:last-child { border-bottom: none; }
+  .card-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .card-item-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+  .card-item-text strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  /* ── LOGOS BAR ─────────────────── */
+  #logos {
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 32px 0;
+  }
+  .logos-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  @media (max-width: 768px) { .logos-inner { padding: 0 24px; flex-wrap: wrap; gap: 16px; } }
+
+  .logos-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    white-space: nowrap;
+    padding-right: 40px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 40px;
+  }
+  .logos-track {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+  }
+  .logo-pill {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    transition: color 0.3s;
+  }
+  .logo-pill:hover { color: rgba(255,255,255,0.5); }
+
+  /* ── VALUE PROP ─────────────────── */
+  #value {
+    background: var(--white);
+    padding: 120px 0;
+  }
+  .value-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  @media (max-width: 900px) { .value-grid { grid-template-columns: 1fr; gap: 60px; } }
+
+  .value-text {}
+  .value-h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .value-h2 em { font-style: italic; color: var(--gold); }
+  .value-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 16px;
+  }
+  .value-body + .value-body { margin-bottom: 36px; }
+
+  .value-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 44px;
+  }
+  .metric-card {
+    padding: 28px 24px;
+    background: var(--ash);
+    border-radius: 4px;
+    border-left: 3px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .metric-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(44,62,80,0.08); }
+  .metric-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .metric-num span { color: var(--gold); font-size: 28px; }
+  .metric-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .value-visual {
+    position: relative;
+  }
+  .value-img-wrap {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--navy);
+  }
+  .value-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    filter: grayscale(20%);
+    transition: transform 0.6s ease;
+  }
+  .value-img-wrap:hover img { transform: scale(1.03); }
+  .value-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(26,38,52,0.8) 100%);
+  }
+  .value-img-tag {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    background: rgba(26,38,52,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212,165,116,0.2);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+  .value-img-tag-name {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--white);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .value-img-tag-role {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .value-corner-accent {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-top: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ── SERVICES ─────────────────────── */
+  #services {
+    background: var(--navy-deep);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(212,165,116,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(52,152,219,0.04) 0%, transparent 50%);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 64px;
+    position: relative;
+    z-index: 2;
+  }
+  .services-h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .services-h2 em { font-style: italic; color: var(--gold); }
+  .services-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2px; } }
+  @media (min-width: 901px) and (max-width: 1100px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .service-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s ease, border-color 0.4s ease;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.055); border-color: rgba(212,165,116,0.2); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 28px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  .service-card:hover .service-icon { opacity: 1; }
+
+  .service-num {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    transition: color 0.4s;
+  }
+  .service-card:hover .service-num { color: rgba(212,165,116,0.08); }
+
+  .service-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.3;
+  }
+  .service-body {
+    font-size: 14px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .service-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(212,165,116,0.12);
+    border: 1px solid rgba(212,165,116,0.25);
+    border-radius: 2px;
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 20px;
+  }
+
+  /* ── DIFFERENTIATORS ─────────────────── */
+  #differentiators {
+    background: var(--white);
+    padding: 120px 0;
+  }
+
+  .diff-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+  @media (max-width: 768px) { .diff-header { grid-template-columns: 1fr; gap: 24px; } }
+
+  .diff-h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .diff-h2 em { font-style: italic; color: var(--gold); }
+  .diff-sub {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-body);
+  }
+
+  .diff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+  @media (max-width: 1000px) { .diff-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .diff-grid { grid-template-columns: 1fr; } }
+
+  .diff-item {
+    background: var(--ash);
+    padding: 44px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .diff-item:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(44,62,80,0.1); }
+  .diff-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .diff-item:hover::after { transform: scaleX(1); }
+
+  .diff-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+  .diff-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+  .diff-body {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  /* ── HOW IT WORKS ─────────────────── */
+  #how {
+    background: var(--navy-deep);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .how-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(52,152,219,0.04) 0%, transparent 60%);
+  }
+
+  .how-header { text-align: center; margin-bottom: 80px; }
+  .how-h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+  .how-h2 em { font-style: italic; color: var(--gold); }
+  .how-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .how-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 900px) { .how-steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .how-steps { grid-template-columns: 1fr; } }
+
+  .how-step {
+    padding: 44px 32px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+  }
+  .how-step:last-child { border-right: none; }
+  @media (max-width: 900px) {
+    .how-step:nth-child(2) { border-right: none; }
+    .how-step { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .how-step:last-child { border-bottom: none; }
+  }
+
+  .step-num {
+    font-family: var(--serif);
+    font-size: 64px;
+    font-weight: 600;
+    color: rgba(212,165,116,0.12);
+    line-height: 1;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+  .how-step:hover .step-num { color: rgba(212,165,116,0.25); }
+
+  .step-title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.35;
+  }
+  .step-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.5);
+  }
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gold-pale);
+    border: 1px solid rgba(212,165,116,0.2);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+
+  /* ── FOUNDER ─────────────────────── */
+  #founder {
+    background: var(--white);
+    padding: 120px 0;
+    overflow: hidden;
+  }
+
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+  @media (max-width: 1000px) { .founder-grid { grid-template-columns: 1fr; gap: 60px; } }
+
+  .founder-img-wrap {
+    position: relative;
+  }
+  .founder-img-bg {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: -24px;
+    bottom: -24px;
+    background: var(--navy-deep);
+    border-radius: 4px;
+    z-index: 0;
+  }
+  .founder-img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: grayscale(10%);
+    transition: transform 0.5s ease;
+  }
+  .founder-img-wrap:hover .founder-img { transform: translate(-6px, -6px); }
+  .founder-accent {
+    position: absolute;
+    top: -12px;
+    right: -40px;
+    z-index: 2;
+    background: var(--gold);
+    border-radius: 2px;
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .founder-accent-num {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy-deep);
+    line-height: 1;
+  }
+  .founder-accent-label {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy-deep);
+    opacity: 0.7;
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  .founder-content {}
+  .founder-name {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .founder-title {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 32px;
+    font-weight: 500;
+  }
+  .founder-quote {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.65;
+    color: var(--navy);
+    border-left: 3px solid var(--gold);
+    padding-left: 28px;
+    margin-bottom: 32px;
+    opacity: 0.85;
+  }
+  .founder-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 16px;
+  }
+
+  .founder-career {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .career-tag {
+    background: var(--ash);
+    border: 1px solid var(--ash-mid);
+    border-radius: 2px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .career-tag:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+  .career-tag.gold { background: rgba(212,165,116,0.1); border-color: rgba(212,165,116,0.3); color: var(--navy); }
+
+  /* ── CLIENTS ─────────────────────── */
+  #clients {
+    background: var(--ash);
+    padding: 80px 0;
+  }
+  .clients-header { text-align: center; margin-bottom: 56px; }
+  .clients-h2 {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+  .clients-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .clients-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -48px;
+  }
+  .clients-track {
+    display: flex;
+    gap: 2px;
+    animation: slide 30s linear infinite;
+    width: max-content;
+  }
+  .clients-track:hover { animation-play-state: paused; }
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .client-logo {
+    flex-shrink: 0;
+    width: 200px;
+    height: 90px;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 32px;
+    border: 1px solid var(--ash-mid);
+    transition: border-color 0.3s;
+    cursor: default;
+  }
+  .client-logo:hover { border-color: var(--gold); }
+
+  .client-logo span {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(44,62,80,0.3);
+    letter-spacing: 0.06em;
+    transition: color 0.3s;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .client-logo:hover span { color: var(--navy); }
+
+  /* ── ABOUT ─────────────────────────── */
+  #about {
+    background: var(--navy-deep);
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 50% at 0% 50%, rgba(212,165,116,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 60% at 100% 30%, rgba(52,152,219,0.04) 0%, transparent 50%);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 60px; } }
+
+  .about-h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+  .about-h2 em { font-style: italic; color: var(--gold); }
+  .about-body {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .about-pillars {
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pillar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .pillar:hover { background: rgba(212,165,116,0.05); border-color: rgba(212,165,116,0.15); }
+  .pillar-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .pillar-text {}
+  .pillar-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 3px;
+  }
+  .pillar-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .about-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .about-img-card {
+    aspect-ratio: 1;
+    background: var(--navy-mid);
+    overflow: hidden;
+    position: relative;
+  }
+  .about-img-card.large { grid-column: span 2; aspect-ratio: 2/1; }
+  .about-img-card-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(212,165,116,0.08), rgba(52,152,219,0.08));
+    padding: 32px;
+    text-align: center;
+    transition: background 0.4s;
+  }
+  .about-img-card:hover .about-img-card-inner { background: linear-gradient(135deg, rgba(212,165,116,0.14), rgba(52,152,219,0.12)); }
+  .about-img-card-text {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.4;
+  }
+  .about-img-card-text em { font-style: italic; color: var(--gold); }
+
+  /* ── CTA SECTION ─────────────────── */
+  #cta {
+    background: var(--white);
+    padding: 120px 0;
+  }
+  .cta-inner {
+    background: var(--navy);
+    border-radius: 8px;
+    padding: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) { .cta-inner { padding: 60px 32px; } }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 30% 50%, rgba(212,165,116,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 60% at 70% 50%, rgba(52,152,219,0.05) 0%, transparent 60%);
+  }
+
+  .cta-content { position: relative; z-index: 2; }
+  .cta-h2 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.5vw, 54px);
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .cta-h2 em { font-style: italic; color: var(--gold); }
+  .cta-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── FOOTER ─────────────────────── */
+  footer {
+    background: var(--navy-deep);
+    padding: 64px 0 40px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .footer-brand-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .footer-brand-sub {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 24px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+  .social-link {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+  }
+  .social-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+
+  .footer-col-title {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: gap;
+    gap: 16px;
+  }
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+  }
+  .footer-copy a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  .footer-copy a:hover { color: var(--gold); }
+
+  /* ── ANIMATIONS ─────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SCROLLBAR ─────────────────── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy-deep); }
+  ::-webkit-scrollbar-thumb { background: rgba(212,165,116,0.4); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+  /* ── SECTION DIVIDER ─────────── */
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 16px;
+  }
+  .divider.center { margin: 0 auto 16px; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────── -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Opus Família & Legado">
+      <img src="images/logo-white.svg" alt="Opus Família & Legado" style="height:44px; width:auto; display:block;">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#differentiators">Diferenciais</a></li>
+      <li><a href="#how">Como Funciona</a></li>
+      <li><a href="#founder">Fundadora</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#cta" class="nav-cta">Fale Conosco</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-diagonal"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-label">Wealth Planning B2B</div>
+      <h1 class="hero-h1">
+        Transformamos planejamento<br>patrimonial em <em>receita recorrente</em><br>para seu escritório
+      </h1>
+      <p class="hero-desc">
+        A Opus é uma plataforma white-label que entrega estrutura técnica completa — jurídica, tributária e patrimonial — para escritórios de investimento que buscam servir famílias UHNW/HNWI com excelência.
+      </p>
+      <div class="hero-actions">
+        <a href="#cta" class="btn-primary">
+          Quero ser parceiro
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#how" class="btn-ghost">Como funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">Anos de mercado</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">48<span>h</span></div>
+          <div class="stat-label">Entrega com IA</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Áreas de expertise</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-label">Plataforma White-Label</div>
+        <div class="hero-card-title">Estrutura completa de wealth planning para o seu escritório</div>
+        <div class="hero-card-item">
+          <div class="card-dot"></div>
+          <div class="card-item-text"><strong>Planejamento Tributário</strong> — Redução fiscal estruturada e legal</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="card-dot"></div>
+          <div class="card-item-text"><strong>Sucessão Patrimonial</strong> — Holdings, testamentos, doações</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="card-dot"></div>
+          <div class="card-item-text"><strong>Proteção de Ativos</strong> — Blindagem jurídica de patrimônio</div>
+        </div>
+        <div class="hero-card-item">
+          <div class="card-dot"></div>
+          <div class="card-item-text"><strong>IA + Análise Financeira</strong> — Relatórios em horas, não semanas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOGO BAR ─────────────────────────── -->
+<section id="logos">
+  <div class="logos-inner">
+    <div class="logos-label">Experiência em</div>
+    <div class="logos-track">
+      <div class="logo-pill">Itaú Private</div>
+      <div class="logo-pill">Santander</div>
+      <div class="logo-pill">Votorantim</div>
+      <div class="logo-pill">Head of Wealth</div>
+      <div class="logo-pill">EFP Certificada</div>
+      <div class="logo-pill">Direito + Finanças</div>
+      <div class="logo-pill">Itaú Private</div>
+      <div class="logo-pill">Santander</div>
+      <div class="logo-pill">Votorantim</div>
+      <div class="logo-pill">Head of Wealth</div>
+      <div class="logo-pill">EFP Certificada</div>
+      <div class="logo-pill">Direito + Finanças</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUE PROP ─────────────────────────── -->
+<section id="value">
+  <div class="container">
+    <div class="value-grid">
+      <div class="value-text reveal">
+        <span class="section-label">Proposta de Valor</span>
+        <div class="divider"></div>
+        <h2 class="value-h2">Seu escritório, nossa <em>estrutura técnica</em></h2>
+        <p class="value-body">O mercado de planejamento patrimonial ficou mais complexo. As famílias de alta renda exigem cada vez mais estrutura, e os escritórios de investimento precisam responder — mas não têm como construir isso internamente.</p>
+        <p class="value-body">A Opus nasceu para ser essa resposta. Somos uma plataforma B2B white-label que entrega toda a inteligência técnica de wealth planning para que seu escritório possa oferecer uma experiência de alto nível sem criar uma estrutura interna.</p>
+        <div class="value-metrics">
+          <div class="metric-card reveal reveal-delay-1">
+            <div class="metric-num">100<span>%</span></div>
+            <div class="metric-desc">White-label — sua marca, nossa expertise</div>
+          </div>
+          <div class="metric-card reveal reveal-delay-2">
+            <div class="metric-num">48<span>h</span></div>
+            <div class="metric-desc">Entrega de relatórios com inteligência artificial</div>
+          </div>
+          <div class="metric-card reveal reveal-delay-3">
+            <div class="metric-num">0</div>
+            <div class="metric-desc">Estrutura interna necessária para começar</div>
+          </div>
+          <div class="metric-card reveal reveal-delay-4">
+            <div class="metric-num">5<span>×</span></div>
+            <div class="metric-desc">Áreas integradas de expertise</div>
+          </div>
+        </div>
+      </div>
+      <div class="value-visual reveal reveal-delay-2">
+        <div class="value-img-wrap">
+          <img src="images/building.svg" alt="Arquitetura corporativa moderna">
+          <div class="value-img-overlay"></div>
+          <div class="value-img-tag">
+            <div class="value-img-tag-name">Marina Gonçalves</div>
+            <div class="value-img-tag-role">Sócia Fundadora — Opus Família & Legado</div>
+          </div>
+        </div>
+        <div class="value-corner-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ─────────────────────────── -->
+<section id="services">
+  <div class="services-bg"></div>
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="section-label">Nossos Serviços</span>
+      <div class="divider center"></div>
+      <h2 class="services-h2">Expertise completa em <em>cinco frentes</em></h2>
+      <p class="services-sub">Uma solução integrada que cobre todas as dimensões do wealth planning de alto padrão.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">01</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="12" width="32" height="26" rx="2" stroke="#D4A574" stroke-width="1.5"/>
+          <path d="M8 20h32" stroke="#D4A574" stroke-width="1.5"/>
+          <path d="M16 28h8M16 34h16" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M28 8v8" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M20 8v8" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3 class="service-title">Planejamento Patrimonial</h3>
+        <p class="service-body">Estruturação completa do patrimônio familiar com visão de longo prazo. Diagnóstico, estratégia e implementação para famílias UHNW/HNWI.</p>
+        <div class="service-ai-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="4" stroke="#D4A574" stroke-width="1"/><path d="M5 3v2l1.5 1.5" stroke="#D4A574" stroke-width="1" stroke-linecap="round"/></svg>
+          Core Service
+        </div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">02</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="20" r="8" stroke="#D4A574" stroke-width="1.5"/>
+          <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M30 10l4-4M34 6l4 4" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3 class="service-title">Planejamento Sucessório</h3>
+        <p class="service-body">Holdings familiares, testamentos, doações estratégicas e acordos de acionistas. Continuidade do legado com eficiência jurídica e tributária.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">03</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 8L8 16v10c0 9 7 16 16 18 9-2 16-9 16-18V16L24 8z" stroke="#D4A574" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M18 24l4 4 8-8" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="service-title">Proteção de Ativos</h3>
+        <p class="service-body">Blindagem jurídica do patrimônio contra riscos empresariais, processuais e de relacionamento. Estruturas robustas e legalmente sólidas.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">04</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 36l8-12 6 8 8-16 4 8" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="8" y="8" width="32" height="32" rx="2" stroke="#D4A574" stroke-width="1.5"/>
+        </svg>
+        <h3 class="service-title">Otimização Tributária</h3>
+        <p class="service-body">Redução da carga fiscal dentro da legalidade. Reorganizações societárias, planejamento de IR, ITCMD e estruturas internacionais.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2" style="grid-column: span 2;">
+        <div class="service-num">05</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="28" width="8" height="12" rx="1" stroke="#D4A574" stroke-width="1.5"/>
+          <rect x="20" y="20" width="8" height="20" rx="1" stroke="#D4A574" stroke-width="1.5"/>
+          <rect x="32" y="12" width="8" height="28" rx="1" stroke="#D4A574" stroke-width="1.5"/>
+          <path d="M10 16l10-8 8 6 10-10" stroke="#D4A574" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="service-title">Análise Financeira com Inteligência Artificial</h3>
+        <p class="service-body">Relatórios de wealth planning completos em horas — não semanas. Nossa plataforma combina expertise humana com IA para entregas rápidas, escaláveis e precisas. O diferencial que transforma a capacidade do seu escritório.</p>
+        <div class="service-ai-badge">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M5 1l1.2 2.6L9 4.1 7 6l.5 3L5 7.7 2.5 9 3 6 1 4.1l2.8-.5L5 1z" fill="#D4A574"/></svg>
+          IA Powered — 48h delivery
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIFFERENTIATORS ─────────────────────── -->
+<section id="differentiators">
+  <div class="container">
+    <div class="diff-header">
+      <div class="reveal">
+        <span class="section-label">Por que a Opus</span>
+        <div class="divider"></div>
+        <h2 class="diff-h2">O que nos torna <em>diferentes</em></h2>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <p class="diff-sub">Não somos mais um escritório de advocacia ou consultoria. Somos uma plataforma desenhada do zero para ser o backbone técnico dos escritórios de investimento mais exigentes do Brasil.</p>
+      </div>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item reveal reveal-delay-1">
+        <svg class="diff-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 4L8 10v12c0 9.9 6.3 19.1 14 22 7.7-2.9 14-12.1 14-22V10L22 4z" stroke="#D4A574" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M16 22l5 5 9-9" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="diff-title">Fundadora com 10+ anos no mercado</h3>
+        <p class="diff-body">Background nas maiores instituições financeiras do Brasil (Itaú, Santander, Votorantim) e ex-Head de Wealth Planning. Expertise real, não teórica.</p>
+      </div>
+      <div class="diff-item reveal reveal-delay-2">
+        <svg class="diff-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="22" r="14" stroke="#D4A574" stroke-width="1.4"/>
+          <path d="M15 22l5 5 9-9" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 8v4M22 32v4M8 22h4M32 22h4" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <h3 class="diff-title">Jurídico + Financeiro integrados</h3>
+        <p class="diff-body">A rara combinação de formação em Direito e expertise financeira em uma única plataforma. Nenhuma lacuna entre a estratégia e a execução legal.</p>
+      </div>
+      <div class="diff-item reveal reveal-delay-3">
+        <svg class="diff-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="14" width="28" height="20" rx="2" stroke="#D4A574" stroke-width="1.4"/>
+          <path d="M14 14V10M30 14V10" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M14 25h16M14 29h10" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="34" cy="10" r="5" fill="#2C3E50" stroke="#D4A574" stroke-width="1.4"/>
+          <path d="M31 10l2 2 4-4" stroke="#D4A574" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="diff-title">Entrega em 48h com IA</h3>
+        <p class="diff-body">Relatórios completos de planejamento patrimonial que antes levavam semanas agora chegam em horas. Escalabilidade sem perda de qualidade técnica.</p>
+      </div>
+      <div class="diff-item reveal reveal-delay-4">
+        <svg class="diff-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="18" r="6" stroke="#D4A574" stroke-width="1.4"/>
+          <circle cx="28" cy="18" r="6" stroke="#D4A574" stroke-width="1.4"/>
+          <path d="M8 36c0-5.52 3.58-10 8-10M20 26c2.21-1.26 4.79-2 7.5-2 4.97 0 9 4.03 9 9" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <h3 class="diff-title">Plug-and-play para parceiros</h3>
+        <p class="diff-body">Zero estrutura interna necessária. Seu escritório oferece o serviço premium, a Opus entrega toda a inteligência técnica em white-label. Parceria estratégica real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ─────────────────────────── -->
+<section id="how">
+  <div class="how-bg"></div>
+  <div class="container">
+    <div class="how-header reveal">
+      <span class="section-label">Como Funciona</span>
+      <div class="divider center"></div>
+      <h2 class="how-h2">Simples para você, <em>sofisticado</em> para o cliente</h2>
+      <p class="how-sub">Quatro etapas que transformam demanda do cliente em planejamento patrimonial de alto nível.</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal reveal-delay-1">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Parceria & Onboarding</h3>
+        <p class="step-body">Seu escritório acessa a plataforma Opus. Configuramos o ambiente white-label com sua marca em 5 dias úteis. Sem complexidade operacional.</p>
+        <div class="step-badge">Rápido</div>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Recebimento da Demanda</h3>
+        <p class="step-body">Você identifica o cliente com necessidade de wealth planning e nos aciona. Compartilhamos um briefing estruturado para capturar todas as informações necessárias.</p>
+        <div class="step-badge">Estruturado</div>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Diagnóstico & Análise com IA</h3>
+        <p class="step-body">Nossa plataforma de IA + equipe técnica processa o diagnóstico patrimonial completo. Análise tributária, jurídica e financeira integradas em 48 horas.</p>
+        <div class="step-badge">48h com IA</div>
+      </div>
+      <div class="how-step reveal reveal-delay-4">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Entrega & Implementação</h3>
+        <p class="step-body">Você apresenta o planejamento ao cliente com sua marca. Suportamos a implementação das estruturas recomendadas ao longo de todo o processo.</p>
+        <div class="step-badge">White-label</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDER ─────────────────────────────── -->
+<section id="founder">
+  <div class="container">
+    <div class="founder-grid">
+      <div class="founder-img-wrap reveal">
+        <div class="founder-img-bg"></div>
+        <img
+          src="images/founder.jpeg"
+          alt="Marina Gonçalves — Sócia Fundadora da Opus Família & Legado"
+          class="founder-img"
+        >
+        <div class="founder-accent">
+          <div class="founder-accent-num">10+</div>
+          <div class="founder-accent-label">Anos de<br>Mercado</div>
+        </div>
+      </div>
+      <div class="founder-content reveal reveal-delay-2">
+        <span class="section-label">A Fundadora</span>
+        <div class="divider"></div>
+        <h2 class="founder-name">Marina Gonçalves</h2>
+        <div class="founder-title">Sócia Fundadora — Opus Família & Legado</div>
+        <blockquote class="founder-quote">
+          "Depois de mais de uma década no mercado financeiro, entendi que o problema não era falta de bons assessores — era falta de estrutura."
+        </blockquote>
+        <p class="founder-body">O cenário tributário ficou mais complexo, as famílias ficaram mais exigentes, e os escritórios ficaram no meio sem saber como responder. A Opus nasceu para ser essa resposta.</p>
+        <p class="founder-body">Com formação dupla em Direito e Finanças, e passagens pelo Itaú Private, Santander e Votorantim como Head de Wealth Planning, Marina acumulou o conhecimento técnico necessário para construir uma plataforma que realmente funciona para famílias de alto patrimônio.</p>
+        <div class="founder-career">
+          <span class="career-tag">Itaú Private Bank</span>
+          <span class="career-tag">Santander</span>
+          <span class="career-tag">Votorantim</span>
+          <span class="career-tag gold">Head of Wealth Planning</span>
+          <span class="career-tag">Direito + Finanças</span>
+          <span class="career-tag">EFP Certificada</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLIENTS ─────────────────────────────── -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-header reveal">
+      <span class="section-label">Parceiros & Clientes</span>
+      <h2 class="clients-h2">Confiança construída com os melhores escritórios</h2>
+      <p class="clients-sub">Parceiros estratégicos em todo o Brasil</p>
+    </div>
+  </div>
+  <div class="clients-carousel">
+    <div class="clients-track">
+      <div class="client-logo"><span>Escritório<br>Alphaville</span></div>
+      <div class="client-logo"><span>Capital<br>Advisors</span></div>
+      <div class="client-logo"><span>Família<br>Office SP</span></div>
+      <div class="client-logo"><span>Invest<br>Partners</span></div>
+      <div class="client-logo"><span>Patrimonial<br>RJ</span></div>
+      <div class="client-logo"><span>Silver<br>Wealth</span></div>
+      <div class="client-logo"><span>Norte<br>Capital</span></div>
+      <div class="client-logo"><span>Legado<br>Family</span></div>
+      <!-- Duplicado para loop contínuo -->
+      <div class="client-logo"><span>Escritório<br>Alphaville</span></div>
+      <div class="client-logo"><span>Capital<br>Advisors</span></div>
+      <div class="client-logo"><span>Família<br>Office SP</span></div>
+      <div class="client-logo"><span>Invest<br>Partners</span></div>
+      <div class="client-logo"><span>Patrimonial<br>RJ</span></div>
+      <div class="client-logo"><span>Silver<br>Wealth</span></div>
+      <div class="client-logo"><span>Norte<br>Capital</span></div>
+      <div class="client-logo"><span>Legado<br>Family</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────── -->
+<section id="about">
+  <div class="about-bg"></div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">Sobre a Opus</span>
+        <div class="divider"></div>
+        <h2 class="about-h2">Sofisticação, solidez técnica e <em>visão de longo prazo</em></h2>
+        <p class="about-body">A Opus Família & Legado é uma plataforma white-label de wealth planning B2B voltada exclusivamente para escritórios de investimento que desejam elevar o nível de serviço oferecido às suas famílias mais exigentes.</p>
+        <p class="about-body">Nossa missão é transformar planejamento patrimonial em uma vantagem competitiva real para o seu escritório — sem que você precise construir uma estrutura técnica interna complexa e cara.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 36 36" fill="none">
+              <path d="M18 4l12 7v10c0 8-5 14-12 15-7-1-12-7-12-15V11L18 4z" stroke="#D4A574" stroke-width="1.4" stroke-linejoin="round"/>
+            </svg>
+            <div class="pillar-text">
+              <div class="pillar-title">Sofisticação</div>
+              <div class="pillar-sub">Presença visual e comunicação de alto padrão</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 36 36" fill="none">
+              <rect x="6" y="10" width="24" height="18" rx="2" stroke="#D4A574" stroke-width="1.4"/>
+              <path d="M12 16h12M12 20h8" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <div class="pillar-text">
+              <div class="pillar-title">Solidez Técnica</div>
+              <div class="pillar-sub">Expertise e rigor em cada entrega</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="18" r="12" stroke="#D4A574" stroke-width="1.4"/>
+              <path d="M18 10v8l5 5" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="pillar-text">
+              <div class="pillar-title">Visão de Longo Prazo</div>
+              <div class="pillar-sub">Planejamento patrimonial intergeracional</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <svg class="pillar-icon" viewBox="0 0 36 36" fill="none">
+              <circle cx="14" cy="14" r="5" stroke="#D4A574" stroke-width="1.4"/>
+              <circle cx="22" cy="14" r="5" stroke="#D4A574" stroke-width="1.4"/>
+              <path d="M8 28c0-4.4 2.7-8 6-8M14 20c1.8-1 3.9-1.6 6-1.6 3.9 0 7 2.9 7 6.6" stroke="#D4A574" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <div class="pillar-text">
+              <div class="pillar-title">Parceria Estratégica</div>
+              <div class="pillar-sub">Relação próxima e estratégica com escritórios</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual reveal reveal-delay-2">
+        <div class="about-img-card large">
+          <div class="about-img-card-inner">
+            <div class="about-img-card-text"><em>Legado</em> não se constrói em um dia.<br>Mas pode ser planejado agora.</div>
+          </div>
+        </div>
+        <div class="about-img-card">
+          <div class="about-img-card-inner">
+            <div class="about-img-card-text" style="font-size:14px; color: rgba(255,255,255,0.5)">
+              <em style="font-size:32px; color:#D4A574;">B2B</em><br>White-label
+            </div>
+          </div>
+        </div>
+        <div class="about-img-card">
+          <div class="about-img-card-inner">
+            <div class="about-img-card-text" style="font-size:14px; color: rgba(255,255,255,0.5)">
+              <em style="font-size:32px; color:#D4A574;">IA</em><br>Powered
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────── -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="cta-bg"></div>
+      <div class="cta-content">
+        <span class="section-label" style="color: var(--gold); margin-bottom: 20px;">Pronto para começar?</span>
+        <h2 class="cta-h2">Eleve o padrão do seu escritório com<br><em>wealth planning de alto nível</em></h2>
+        <p class="cta-sub">Agende uma conversa com nossa equipe e descubra como a Opus pode transformar a capacidade do seu escritório — sem custo estrutural.</p>
+        <div class="cta-actions">
+          <a href="https://wa.me/5519900000000" target="_blank" rel="noopener" class="btn-primary">
+            Agendar uma conversa
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/opus-fam%C3%ADlia-legado/" target="_blank" rel="noopener" class="btn-ghost" style="color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2);">
+            Seguir no LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="images/logo-white.svg" alt="Opus Família & Legado" style="height:48px; width:auto; margin-bottom:16px; display:block;">
+        <p class="footer-desc">Plataforma white-label de wealth planning B2B para escritórios de investimento que buscam servir famílias de alto patrimônio com excelência técnica.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/opus-fam%C3%ADlia-legado/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.6 1H2.4C1.63 1 1 1.63 1 2.4v11.2c0 .77.63 1.4 1.4 1.4h11.2c.77 0 1.4-.63 1.4-1.4V2.4c0-.77-.63-1.4-1.4-1.4zM5.2 12.8H3.2V6.4h2v6.4zM4.2 5.52A1.16 1.16 0 113.04 4.36 1.16 1.16 0 014.2 5.52zM12.8 12.8h-2v-3.12c0-.74-.02-1.7-1.04-1.7-1.04 0-1.2.81-1.2 1.64V12.8h-2V6.4h1.92v.87h.03c.27-.5.92-1.04 1.89-1.04 2.02 0 2.4 1.33 2.4 3.06v3.51z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/opusfl.consultoria" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 1.44c2.14 0 2.39.01 3.23.05 2.19.1 3.21 1.14 3.31 3.31.04.84.05 1.09.05 3.23s-.01 2.39-.05 3.23c-.1 2.17-1.12 3.21-3.31 3.31-.84.04-1.09.05-3.23.05s-2.39-.01-3.23-.05c-2.19-.1-3.21-1.14-3.31-3.31-.04-.84-.05-1.09-.05-3.23S1.44 5.6 1.48 4.76C1.58 2.58 2.6 1.54 4.77 1.44 5.61 1.4 5.86 1.44 8 1.44zM8 0C5.82 0 5.55.01 4.7.05 1.78.19.19 1.78.05 4.7.01 5.55 0 5.82 0 8s.01 2.45.05 3.3c.14 2.92 1.73 4.51 4.65 4.65C5.55 15.99 5.82 16 8 16s2.45-.01 3.3-.05c2.92-.14 4.51-1.73 4.65-4.65.04-.85.05-1.12.05-3.3s-.01-2.45-.05-3.3C15.81 1.78 14.22.19 11.3.05 10.45.01 10.18 0 8 0zm0 3.89a4.11 4.11 0 100 8.22 4.11 4.11 0 000-8.22zm0 6.78a2.67 2.67 0 110-5.34 2.67 2.67 0 010 5.34zM12.27 2.77a.96.96 0 100 1.92.96.96 0 000-1.92z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Serviços</div>
+        <ul class="footer-links">
+          <li><a href="#services">Planejamento Patrimonial</a></li>
+          <li><a href="#services">Planejamento Sucessório</a></li>
+          <li><a href="#services">Proteção de Ativos</a></li>
+          <li><a href="#services">Otimização Tributária</a></li>
+          <li><a href="#services">Análise com IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Empresa</div>
+        <ul class="footer-links">
+          <li><a href="#about">Sobre a Opus</a></li>
+          <li><a href="#founder">Fundadora</a></li>
+          <li><a href="#differentiators">Diferenciais</a></li>
+          <li><a href="#how">Como Funciona</a></li>
+          <li><a href="#cta">Seja Parceiro</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contato</div>
+        <ul class="footer-links">
+          <li><a href="https://www.linkedin.com/company/opus-fam%C3%ADlia-legado/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/opusfl.consultoria" target="_blank" rel="noopener">@opusfl.consultoria</a></li>
+          <li><a href="#cta">Agendar conversa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Opus Família & Legado. Todos os direitos reservados.</div>
+      <div class="footer-copy">Desenvolvido com excelência técnica para o mercado de wealth planning.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>

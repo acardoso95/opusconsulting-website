@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 56" fill="none">
+
+  <!-- Circle symbol (white filled) -->
+  <circle cx="28" cy="28" r="26" fill="white"/>
+
+  <!-- Spiral arcs in dark navy on white circle -->
+  <!-- Arc 1 outermost -->
+  <path
+    d="M 13 47
+       C  5 40,  2 30,  4 21
+       C  7 12, 14  6, 23  4
+       C 33  2, 42  8, 45 18
+       C 48 28, 44 38, 37 43
+       C 31 47, 24 46, 19 41"
+    stroke="#1a2634" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+
+  <!-- Arc 2 middle -->
+  <path
+    d="M 19 41
+       C 15 37, 13 31, 15 26
+       C 17 20, 22 17, 28 17
+       C 34 17, 39 21, 39 27
+       C 39 33, 35 37, 30 38
+       C 26 38, 22 36, 21 32"
+    stroke="#1a2634" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+
+  <!-- Arc 3 inner -->
+  <path
+    d="M 21 32
+       C 20 29, 20 25, 23 23
+       C 25 21, 28 20, 31 21
+       C 34 22, 35 25, 34 28
+       C 33 31, 30 32, 28 32"
+    stroke="#1a2634" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+
+  <!-- Center dot -->
+  <circle cx="28" cy="30" r="3" fill="#1a2634"/>
+
+  <!-- "Opus" text -->
+  <text
+    x="64" y="30"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="24" font-weight="700" fill="white" letter-spacing="-0.5"
+  >Opus</text>
+
+  <!-- "FAMÍLIA &amp; LEGADO" -->
+  <text
+    x="65" y="44"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="8.5" font-weight="400" fill="#D4A574" letter-spacing="2.2"
+  >FAMÍLIA &amp; LEGADO</text>
+
+</svg>
